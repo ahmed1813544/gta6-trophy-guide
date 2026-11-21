@@ -38,6 +38,12 @@ createServer((request, response) => {
     response.writeHead(400).end('bad request');
     return;
   }
+  if (pathname === '/health') {
+    const body = JSON.stringify({ ok: true, app: 'leonida-legend' });
+    response.writeHead(200, { 'content-type': 'application/json; charset=utf-8', 'content-length': Buffer.byteLength(body) });
+    response.end(body);
+    return;
+  }
   if (pathname.endsWith('/')) pathname += 'index.html';
   const file = resolve(join(root, normalize(pathname)));
   if (file !== root && !file.startsWith(root + sep)) {

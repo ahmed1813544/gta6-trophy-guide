@@ -32,6 +32,7 @@ body {
 .progress-bar { flex: 1; height: 14px; background: rgba(255,255,255,.25); border-radius: 8px; overflow: hidden; }
 #progress-fill { height: 100%; width: 0; background: linear-gradient(90deg, var(--sunset2), #ffd23d); transition: width .3s; }
 #progress-text { font-weight: 700; margin: 0; white-space: nowrap; }
+.next-up { margin: 12px 0 0; font-size: 14px; font-style: italic; color: #ffe9a8; }
 .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
 .chip { background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.4); padding: 4px 10px; border-radius: 999px; font-size: 13px; }
 main { max-width: 1080px; margin: 0 auto; padding: 24px 20px 40px; }

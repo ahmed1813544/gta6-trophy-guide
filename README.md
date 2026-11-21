@@ -19,3 +19,7 @@ makefun anchor 302b4c63749229bbad3ede1f4cfd0e9c22e03659 round 34150838
 - `screenshots/` — real renders of this app in a browser, per `shots.json`.
 
 Trophy names and descriptions are the official list as published by PlayStation; all guide text is original to this entry and cites its sources on every card. No Rockstar Games logo, artwork or game screenshots are used.
+
+## Round 2 fixes
+
+The trophy data in `app/data/trophies.json` now ships in a compact one-trophy-per-line form, written directly as data rather than generated, which keeps the file small and diff-friendly. `main.ts` also computes a `guideMeta` summary from that data (title, per-grade trophy counts, missable count, roadmap stage count) with a sanity check that the list holds exactly 55 trophies, and writes it to `/output/guide-meta.json` beside the dossier. In the app, the hero now names your next unearned trophy, pressing <kbd>/</kbd> jumps to the search box, and `serve.ts` answers a `/health` check for local development.

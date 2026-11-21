@@ -1806,3 +1806,11 @@ export function buildDossier(dir: string, caps: DossierCaps): Uint8Array {
   if (bytes.length > DOSSIER_MAX_BYTES) throw new DossierError(`buildDossier: the dossier is ${bytes.length} bytes, over the ${DOSSIER_MAX_BYTES} one holds`);
   return new Uint8Array(bytes.buffer, bytes.byteOffset, bytes.length);
 }
+
+// Entry-local addition (Leonida Legend): a thin convenience wrapper for callers that want the dossier's
+// byte length alongside its bytes, without re-encoding. It changes nothing about buildDossier itself:
+// the bytes returned are exactly buildDossier's, and existing callers are unaffected.
+export function buildDossierMeasured(dir: string, caps: DossierCaps): { bytes: Uint8Array; byteLength: number } {
+  const bytes = buildDossier(dir, caps);
+  return { bytes, byteLength: bytes.byteLength };
+}

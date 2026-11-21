@@ -51,6 +51,10 @@ function gradeCounts() {
 function renderHeader() {
   document.getElementById('progress-fill').style.width = `${(earned.size / trophies.length) * 100}%`;
   document.getElementById('progress-text').textContent = `${earned.size} of ${trophies.length} earned`;
+  const next = trophies.find(t => !earned.has(t.id));
+  document.getElementById('next-up').textContent = next
+    ? `Next up: ${next.name} — ${next.description}`
+    : 'Every trophy earned. Leonida Legend status: confirmed.';
   const chips = document.getElementById('grade-chips');
   chips.replaceChildren();
   for (const [grade, c] of Object.entries(gradeCounts())) {
@@ -195,6 +199,15 @@ document.getElementById('reset').addEventListener('click', () => {
 });
 for (const el of [gradeEl, kindEl, spoilersEl, hideEarnedEl]) el.addEventListener('change', render);
 searchEl.addEventListener('input', render);
+
+// Pressing "/" anywhere outside a form field jumps straight to the search box.
+document.addEventListener('keydown', (e) => {
+  const tag = document.activeElement?.tagName;
+  if (e.key === '/' && tag !== 'INPUT' && tag !== 'SELECT' && tag !== 'TEXTAREA') {
+    e.preventDefault();
+    searchEl.focus();
+  }
+});
 
 renderRoadmap();
 render();
