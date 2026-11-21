@@ -80,3 +80,8 @@ button:hover, .import-btn:hover { filter: brightness(1.1); }
 .hidden-note { color: var(--danger); font-weight: 600; font-size: 14px; margin: 0; }
 .empty { color: #68727e; font-size: 15px; padding: 12px 0; }
 footer { color: #68727e; font-size: 13px; line-height: 1.55; padding: 0 4px; }
+.pace-panel { border-left: 4px solid var(--accent, #e8b33c); }
+.pace-panel h2 { margin-top: 0; }
+.pace-summary { font-size: 15.5px; font-weight: 600; margin: 4px 0; }
+.pace-grades { color: #68727e; font-size: 13.5px; margin: 2px 0; text-transform: capitalize; }
+.pace-verdict { margin: 6px 0 0; line-height: 1.55; font-size: 14.5px; }
