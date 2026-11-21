@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Legend — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23c99612'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' fill='%2317202b' font-family='sans-serif' font-weight='bold'%3EL%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <p class="kicker">Grand Theft Auto VI · PlayStation 5 · Unofficial fan guide</p>
+    <h1>Leonida Legend</h1>
+    <p class="tagline">The complete GTA VI trophy guide and tracker: all 55 trophies with a guide for each, a five-stage roadmap to the platinum, every missable flagged, and your progress saved in this browser.</p>
+    <div class="progress-wrap">
+      <div class="progress-bar"><div id="progress-fill"></div></div>
+      <p id="progress-text">0 of 55 earned</p>
+    </div>
+    <div id="grade-chips" class="chips"></div>
+  </div>
+</header>
+
+<main>
+  <section class="panel" id="roadmap">
+    <h2>Roadmap to the platinum</h2>
+    <p class="panel-note">Five stages, in the order that wastes the least time. The order is built from the official trophy descriptions: story first (with the missable moments caught as they pass), then strands and activities, then the crime and money grinds, then collectibles and the 100% cleanup.</p>
+    <div id="stages"></div>
+    <div class="missable-box">
+      <h3>Missable trophies — read before you play</h3>
+      <p>Five trophies look missable from their official descriptions: they point at one-off story moments or a single choice. Keep a rotating manual save from Chapter 3 on, and do these the moment the game puts you in the spot:</p>
+      <ul id="missable-list"></ul>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Trophy tracker</h2>
+    <div class="controls">
+      <label>Search <input id="search" type="search" placeholder="name or keyword"></label>
+      <label>Grade
+        <select id="grade">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label>Kind
+        <select id="kind">
+          <option value="all">All kinds</option>
+          <option value="story">Story</option>
+          <option value="missable">Missable</option>
+          <option value="collectibles">Collectibles</option>
+          <option value="activities">Activities</option>
+          <option value="online">Online</option>
+        </select>
+      </label>
+      <label class="check"><input id="spoilers" type="checkbox"> Spoiler shield (hide story trophies until earned)</label>
+      <label class="check"><input id="hide-earned" type="checkbox"> Hide earned</label>
+    </div>
+    <div class="controls">
+      <button id="export" type="button">Export progress</button>
+      <label class="import-btn">Import progress <input id="import" type="file" accept="application/json"></label>
+      <button id="reset" type="button">Reset all</button>
+      <span id="shown-count" class="shown-count"></span>
+    </div>
+    <div id="cards"></div>
+    <p id="empty" class="empty" hidden></p>
+  </section>
+
+  <footer>
+    <p>Trophy names, descriptions and grades are the official PlayStation 5 list as published by PlayStation. Every guide here is written for this page in our own words; each card names its sources. This is a fan work: no Rockstar Games logo, artwork or game screenshots are used, and it is not affiliated with Rockstar Games or PlayStation.</p>
+    <p>Sources consulted: the official PS5 trophy list (PlayStation); PowerPyx GTA VI trophy guide &amp; roadmap; PSNProfiles GTA VI trophy guide.</p>
+  </footer>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>
